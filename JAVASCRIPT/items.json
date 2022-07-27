@@ -1,0 +1,23 @@
+{
+    "items": "Cerveza",
+    "Estilos": [
+        {
+            "Nombre": "IPA"
+        },
+        {
+            "Nombre": "BLONDE"
+        },
+        {
+            "Nombre": "APA"
+        
+        },
+        {
+            "Nombre": "BARLEY WINE"
+
+        },
+        {
+            "Nombre": "AMNER ALE"
+        }
+    ]
+
+}
