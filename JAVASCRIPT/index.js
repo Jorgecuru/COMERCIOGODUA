@@ -9,63 +9,6 @@ let dni;
 
 
 
-const pedirNombre = () => {
-    nombre = prompt('Ingrese su nombre');
-    while (nombre === '' || !isNaN(nombre)) {
-        nombre = prompt('Ingrese su nombre');
-    }
-    return nombre;
-}
-
-//pedirNombre()
-//console.log(nombre)
-
-const pedirEdad = () => {
-    edad = prompt("Ingrese su edad");
-    while (edad < 18) {
-        edad = prompt('Debe ser mayor de 18 anios');
-
-    }
-    return edad;
-}
-
-//pedirEdad()
-
-const pedirProducto = () => {
-    producto = prompt('Elija su cerveza: BlONDE, IPA, APA, AMBER ALE ');
-
-    let precio;
-    switch (producto) {
-        case 'BLONDE':
-            alert('Sale $300');
-            precio = 300;
-            break;
-        case 'IPA':
-            alert('Sale $350');
-            precio = 350;
-            break;
-        case 'APA':
-            alert('sale $360');
-            precio = 360;
-            break;
-        case 'AMBER ALE':
-            alert('sale $320');
-            precio = 320
-            break;
-        default:
-            prompt('No elegio una Cerveza en Stock')
-            break;
-
-
-
-
-
-    }
-
-    return precio;
-}
-
-//pedirProducto()
 
 const pedirCantadidad = () => {
     let cantidad = parseInt(prompt('Ingrese la cantidad deseada'));
@@ -85,7 +28,7 @@ function init() {
     console.log(total);
 }
 
-//init()
+
 
 
 
@@ -120,12 +63,7 @@ const items = [{
 
 const bebida = items.map((el) => el.cerveza)
 
-//console.log(bebida);
 
-//const precio = [300, 320, 350, 370]
-//const birras = ["IPA", "APA", "BLONDE", "AMBER ALE", "BARLEY WINE"]
-
-//birras.push('BELGA')
 
 
 
@@ -137,7 +75,7 @@ const quitarBirra = (estilo) => {
     }
 }
 
-//quitarBirra("BELGA")
+
 
 
 
@@ -196,7 +134,7 @@ CERVEZA.logLista()
 const agregarAlCarrito = document.querySelectorAll(".sumar");
 agregarAlCarrito.forEach((botonAgregarCarrito) => {
     botonAgregarCarrito.addEventListener('click', agregarCarritoClick)
-    //console.log(botonAgregarCarrito);
+    
 
 });
 
@@ -211,12 +149,11 @@ const contenedorItems = document.querySelector(
 function agregarCarritoClick(event) {
     const button = event.target;
     const item = button.closest('.card');
-    //console.log(item);
-
+    
     const titulo = item.querySelector('.card-title').textContent;
     const tituloPrecio = item.querySelector('.card-text').textContent
     const tituloImagen = item.querySelector('.card-img-top').src;
-    //console.log(titulo, tituloPrecio, tituloImagen);
+    
 
     agregarItemCarrito(titulo, tituloPrecio, tituloImagen)
 
@@ -288,16 +225,16 @@ function actualizarTotal() {
 
         const elmentoItemsCarritoPrecio = itemCarrito.querySelector('.shoppingCartItemPrice');
         const precioItemCarrito = Number(elmentoItemsCarritoPrecio.textContent.replace('$', ''));
-        //console.log(precioItemCarrito);
+        
 
 
         const elementoItemsCarritoCantidad = itemCarrito.querySelector('.shoppingCartItemQuantity');
 
         const itemsCarritoCantidad = Number(elementoItemsCarritoCantidad.value);
-        //console.log(itemsCarritoCantidad);
+        
 
         total = total + precioItemCarrito * itemsCarritoCantidad;
-        //console.log(total); 
+        
     });
 
     totalCompra.innerHTML = `${total}$`
@@ -326,12 +263,7 @@ for (const producto of items){
 
 
 
-//const enJson = JSON.stringify(items);
-//const parseo = JSON.parse(enJson);
-//localStorage.setItem( items, 'Prueba de LocalStorage')
 
-//Birras()
-//console.log(Birras);
 
 //INCORPORACION DE EVENTO
 
@@ -366,9 +298,9 @@ botonGracias.onclick = () => {
 const fetchLocalData = () => {
     fetch('/JAVASCRIPT/items.json').then((response)=> response.json())
     .then((result)=>{
-        console.log(result);
+        
     }).catch((err)=>{
-        console.log(err);
+        
     })
 }
 fetchLocalData();  
